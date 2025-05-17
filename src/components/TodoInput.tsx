@@ -1,3 +1,9 @@
 export const TodoInput = () => {
-  return <div>TodoInput</div>;
+  return (
+    <input
+      type="text"
+      className="todo-input"
+      placeholder="Create a new todo..."
+    />
+  );
 };
