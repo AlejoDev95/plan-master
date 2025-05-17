@@ -1,0 +1,159 @@
+:root {
+  --bg: #f2f2f2;
+  --text: #111;
+  --card: #fff;
+  --input: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --bg: #181824;
+  --text: #f0f0f0;
+  --card: #25273c;
+  --input: #393a4b;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1.5rem;
+}
+
+.todo-box {
+  background-color: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.todo-filter {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  background-color: var(--input);
+  color: var(--text);
+  border-radius: 10px 10px 0 0;
+}
+
+.todo-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  gap: 1rem;
+  padding: 0 0.5em 0 0;
+}
+
+.todo-item:hover {
+  background-color: var(--input);
+}
+
+.todo-text {
+  flex: 1;
+  padding: 1rem;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.todo-item_actions {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.todo-item_actions button {
+  cursor: pointer;
+}
+
+.todo-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  gap: 1em;
+}
+
+.todo-footer button {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 480px) {
+  .todo-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.filters button {
+  margin: 0 0.3rem;
+  background: none;
+  border: none;
+  color: var(--text);
+}
+
+.filters button:hover {
+  color: #7c5dfa;
+}
+
+.filters .active {
+  font-weight: bold;
+  color: #7c5dfa;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.by {
+  font-weight: lighter;
+  font-style: italic;
+}

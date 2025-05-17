@@ -1,6 +1,6 @@
 import { Header } from "./components/Header";
 import { TodoFooter } from "./components/TodoFooter";
-import { TodoInput } from "./components/TodoInput";
+import { TodoFilter } from "./components/TodoInput";
 import { TodoList } from "./components/TodoList";
 
 export const App = () => {
@@ -8,10 +8,11 @@ export const App = () => {
     <main className="app-container">
       <Header />
       <section className="todo-box">
-        <TodoInput />
+        <TodoFilter />
         <TodoList />
         <TodoFooter />
       </section>
+      <p className="by">By AlejoDev95</p>
     </main>
   );
 };
