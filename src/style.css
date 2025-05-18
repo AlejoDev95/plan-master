@@ -1,19 +1,33 @@
 :root {
-  --bg: #f2f0e4;
-  --text: #2d3a2e;
-  --card: #ffffff;
-  --input: #eaf6d0;
   --accent: #5a9f6f;
+  --bg: #f2f0e4;
   --border: #484c4943;
+  --btn-clear-hover: #78bb89;
+  --btn-clear-text: #ffffff;
+  --btn-clear: #5a9f6f;
+  --card: #ffffff;
+  --color-delete-hover: #f37a7a;
+  --color-delete: #d34848;
+  --color-edit-hover: #e6cd5b;
+  --color-edit: #c49b0b;
+  --input: #eaf6d0;
+  --text: #2d3a2e;
 }
 
 [data-theme="dark"] {
-  --bg: #1e2b22;
-  --text: #e6f3ea;
-  --card: #2a3a2f;
-  --input: #3a5144;
   --accent: #77bd88;
+  --bg: #1e2b22;
   --border: #cdf7d94e;
+  --btn-clear-hover: #92d4a5;
+  --btn-clear-text: #1e2b22;
+  --btn-clear: #77bd88;
+  --card: #2a3a2f;
+  --color-delete-hover: #ff9c9c;
+  --color-delete: #f36d6d;
+  --color-edit-hover: #f3db7f;
+  --color-edit: #e1c34c;
+  --input: #3a5144;
+  --text: #e6f3ea;
 }
 
 html {
@@ -51,6 +65,13 @@ body {
   color: var(--text);
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .todo-box {
   background-color: var(--card);
   border-radius: 10px;
@@ -69,6 +90,7 @@ body {
   border-radius: 10px 10px 0 0;
   color: var(--text);
 }
+
 .todo-filter::placeholder {
   color: var(--text);
 }
@@ -117,8 +139,32 @@ body {
   align-items: center;
 }
 
-.todo-item_actions button {
+.edit-btn,
+.delete-btn {
+  background: transparent;
+  border: none;
+  padding: 0.4em;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.edit-btn {
+  color: var(--color-edit);
+}
+
+.edit-btn:hover {
+  background-color: var(--color-edit-hover);
+  color: white;
+}
+
+.delete-btn {
+  color: var(--color-delete);
+}
+
+.delete-btn:hover {
+  background-color: var(--color-delete-hover);
+  color: white;
 }
 
 .todo-footer {
@@ -160,11 +206,19 @@ body {
   color: var(--accent);
 }
 
-.theme-toggle {
-  background: none;
+.btn-clear {
+  background-color: var(--btn-clear);
+  color: var(--btn-clear-text);
   border: none;
-  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-clear:hover {
+  background-color: var(--btn-clear-hover);
 }
 
 .by {

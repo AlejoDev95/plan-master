@@ -9,7 +9,7 @@ export const TodoFooter = () => {
         <button>Completed</button>
       </div>
 
-      <button>Clear completed</button>
+      <button className="btn-clear">Clear Completed</button>
     </footer>
   );
 };

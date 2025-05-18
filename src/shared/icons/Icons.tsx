@@ -17,7 +17,6 @@ export const Icon = ({
   className,
 }: IconProps) => {
   const LucideIcon = LucideIcons[name] as ElementType;
-  console.log({ name, LucideIcon });
 
   if (!LucideIcon) {
     console.warn(`Icon "${name}" is not a valid Lucide icon.`);

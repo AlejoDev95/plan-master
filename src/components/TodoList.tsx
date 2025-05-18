@@ -1,3 +1,5 @@
+import { Icon } from "../shared/icons/Icons";
+
 const mockTodo = [
   { id: "1", text: "Actividad 1" },
   { id: "2", text: "Actividad 2" },
@@ -18,8 +20,12 @@ export const TodoList = () => {
         <li key={todo.id} className="todo-item">
           <button className="todo-text">{todo.text}</button>
           <div className="todo-item_actions">
-            <button>X</button>
-            <button>E</button>
+            <button className="edit-btn">
+              <Icon name="Pencil" />
+            </button>
+            <button className="delete-btn">
+              <Icon name="Trash2" />
+            </button>
           </div>
         </li>
       ))}
