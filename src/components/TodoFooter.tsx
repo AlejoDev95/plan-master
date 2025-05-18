@@ -1,3 +1,5 @@
+import { Icon } from "../shared/icons/Icons";
+
 export const TodoFooter = () => {
   return (
     <footer className="todo-footer">
@@ -9,7 +11,12 @@ export const TodoFooter = () => {
         <button>Completed</button>
       </div>
 
-      <button className="btn-clear">Clear Completed</button>
+      <div className="footer-actions">
+        <button className="btn-clear">Clear Completed</button>
+        <button className="btn-add" onClick={() => {}}>
+          <Icon name="Plus" /> New Task
+        </button>
+      </div>
     </footer>
   );
 };
