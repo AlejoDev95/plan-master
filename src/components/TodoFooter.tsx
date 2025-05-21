@@ -1,6 +1,10 @@
 import { Icon } from "../shared/icons/Icons";
 
-export const TodoFooter = () => {
+interface TodoFooterProps {
+  openModal: () => void;
+}
+
+export const TodoFooter = ({ openModal }: TodoFooterProps) => {
   return (
     <footer className="todo-footer">
       <span>5 Item left</span>
@@ -13,7 +17,7 @@ export const TodoFooter = () => {
 
       <div className="footer-actions">
         <button className="btn-clear">Clear Completed</button>
-        <button className="btn-add" onClick={() => {}}>
+        <button className="btn-add" onClick={openModal}>
           <Icon name="Plus" /> New Task
         </button>
       </div>
