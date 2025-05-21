@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# Plan Master
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Pasos para grabar el contenido
 
-Currently, two official plugins are available:
+- Mostrar el resultado final, mencionar que tecnologias se van a utilizar, que conocimientos previos se necesitan y que conocimientos se van a reforzar o aprender.
+- Video explicando como instalar las herramientas necesarias para crear el proyecto.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pasos para grabar el contenido del Front
 
-## Expanding the ESLint configuration
+- Explicar la organización final de las carpetas y el porque se diseño así.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Crear el proyecto inicial con vite.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  - Eliminación y modificación de los archivos.
+  - Inicialización del proyecto el git.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Creación de los componentes iniciales
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  - Header
+    - Title
+    - Boton mock para indicar que ahí ira el botón para cambiar de tema.
+  - Footer
+    - Filters
+    - Boton para crear TODOS
+    - Items left
+  - InputFilter
+  - TodoList
+    - Todo item con el titulo del todo y los botones de ver detalles, editar y eliminar
+  - Comentar que proximamente se construira el modal que servira para crear nuevas tareas.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Creación del esquelo de la App.
+
+  - Objetivo es ubicar los componentes previamente creados.
+
+- Estilizar los componentes
+
+  - En este punto debo revisar el resultado final y determinar los estilos que apareceran en este punto. Definir los colores de la App en este punto.
+
+- Instalación y configuración de los iconos
+
+  - El objetivo es inslarar la lib **lucide-react**, explicar que son y el problema de dependencias ocultas y mostrar como aplicar el patrón adaptador para solucionar esta dependencia oculta.
+
+- Primera prueba de nuestro componente de icons y creación de la logica necesaria para cambiar de tema.
+
+- Ajustando iconos faltantes.
+
+- Explicar que son los portals en React y como los usaremos para crear diferenres modales, uno para ver los detalles del Todo y otro para crear los Todos.
+
+- Creación del componente Modal con sus children. Explicar como este componente servira de cascaron para contender a otros componentes.
+
+- Creación del formulario para crear todos. En este punto aun no tendremos la logica solo sera el aspecto visual.
+
+- Creación del componente para mostrar los detalles del TODO.
+
+- Creación del metodo para editar el todo, por el momento solo abrira el modal con el formulario

@@ -13,17 +13,25 @@ const mockTodo = [
   { id: "10", text: "Actividad 10" },
 ];
 
-export const TodoList = () => {
+interface TodoListProps {
+  openDetailsTodoOpen: () => void;
+  openAddTodoModal: () => void;
+}
+
+export const TodoList = ({
+  openAddTodoModal,
+  openDetailsTodoOpen,
+}: TodoListProps) => {
   return (
     <ul className="todo-list">
       {mockTodo.map((todo) => (
         <li key={todo.id} className="todo-item">
           <button className="todo-text">{todo.text}</button>
           <div className="todo-item_actions">
-            <button className="view-btn">
+            <button className="view-btn" onClick={openDetailsTodoOpen}>
               <Icon name="Eye" />
             </button>
-            <button className="edit-btn">
+            <button className="edit-btn" onClick={openAddTodoModal}>
               <Icon name="Pencil" />
             </button>
             <button className="delete-btn">

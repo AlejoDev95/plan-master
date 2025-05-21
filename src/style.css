@@ -391,3 +391,13 @@ body {
 .modal-actions button[type="button"]:hover {
   background-color: var(--input);
 }
+
+.modal-actions button[type="button"].close-btn {
+  background-color: var(--color-delete);
+  color: var(--white);
+  border: none;
+}
+
+.modal-actions button[type="button"].close-btn:hover {
+  background-color: var(--color-delete-hover);
+}

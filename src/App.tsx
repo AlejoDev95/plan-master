@@ -4,15 +4,21 @@ import { TodoFooter } from "./components/TodoFooter";
 import { TodoFilter } from "./components/TodoInput";
 import { TodoList } from "./components/TodoList";
 import { AddTodoModal } from "./components/AddModal";
+import { TodoDetailsModal } from "./components/TodoDetailsModal";
 
 export const App = () => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [addTodoModalOpen, setAddTodoModalOpen] = useState(false);
+  const [detailsTodoOpen, setDetailsTodoOpen] = useState(false);
 
   const handleAddTodo = (title: string, description: string) => {
     console.log({ title, description });
   };
 
-  const openModal = () => setModalOpen(true);
+  const openAddTodoModal = () => setAddTodoModalOpen(true);
+  const closeAddTodoModal = () => setAddTodoModalOpen(false);
+
+  const openDetailsTodoOpen = () => setDetailsTodoOpen(true);
+  const closeDetailsTodoOpen = () => setDetailsTodoOpen(false);
 
   return (
     <>
@@ -20,17 +26,20 @@ export const App = () => {
         <Header />
         <section className="todo-box">
           <TodoFilter />
-          <TodoList />
-          <TodoFooter openModal={openModal} />
+          <TodoList
+            openAddTodoModal={openAddTodoModal}
+            openDetailsTodoOpen={openDetailsTodoOpen}
+          />
+          <TodoFooter openModal={openAddTodoModal} />
         </section>
         <p className="by">By AlejoDev95</p>
       </main>
-      {modalOpen && (
-        <AddTodoModal
-          onClose={() => setModalOpen(false)}
-          onSubmit={handleAddTodo}
-        />
+
+      {addTodoModalOpen && (
+        <AddTodoModal onClose={closeAddTodoModal} onSubmit={handleAddTodo} />
       )}
+
+      {detailsTodoOpen && <TodoDetailsModal onClose={closeDetailsTodoOpen} />}
     </>
   );
 };
