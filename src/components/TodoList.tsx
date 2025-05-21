@@ -20,6 +20,9 @@ export const TodoList = () => {
         <li key={todo.id} className="todo-item">
           <button className="todo-text">{todo.text}</button>
           <div className="todo-item_actions">
+            <button className="view-btn">
+              <Icon name="Eye" />
+            </button>
             <button className="edit-btn">
               <Icon name="Pencil" />
             </button>

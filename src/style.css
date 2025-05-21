@@ -13,8 +13,11 @@
   --color-delete: #d34848;
   --color-edit-hover: #e6cd5b;
   --color-edit: #c49b0b;
+  --color-view-hover: #7ac3a1;
+  --color-view: #3b6e5a;
   --input: #eaf6d0;
   --text: #2d3a2e;
+  --white: #fff;
 }
 
 [data-theme="dark"] {
@@ -32,6 +35,8 @@
   --color-delete: #f36d6d;
   --color-edit-hover: #f3db7f;
   --color-edit: #e1c34c;
+  --color-view-hover: #81c4a6;
+  --color-view: #7cd1ac;
   --input: #3a5144;
   --text: #e6f3ea;
 }
@@ -145,6 +150,21 @@ body {
   align-items: center;
 }
 
+.view-btn {
+  background: transparent;
+  border: none;
+  padding: 0.4em;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--color-view);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.view-btn:hover {
+  background-color: var(--color-view-hover);
+  color: var(--white);
+}
+
 .edit-btn,
 .delete-btn {
   background: transparent;
@@ -161,7 +181,7 @@ body {
 
 .edit-btn:hover {
   background-color: var(--color-edit-hover);
-  color: white;
+  color: var(--white);
 }
 
 .delete-btn {
@@ -170,7 +190,7 @@ body {
 
 .delete-btn:hover {
   background-color: var(--color-delete-hover);
-  color: white;
+  color: var(--white);
 }
 
 .todo-footer {
